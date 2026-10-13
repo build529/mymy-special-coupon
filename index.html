@@ -6,7 +6,7 @@
   <title>MYMY Chicken - Exclusive Student Coupon</title>
   <style>
     :root {
-      --bg-cream: #fbf7f0;
+      --bg-cream: #f8fafc;
       --brand-purple: #6366f1;
       --brand-purple-dark: #4f46e5;
       --brand-red: #dc2626;
@@ -21,22 +21,33 @@
       box-sizing: border-box;
     }
 
+    /* PERFECT VERTICAL & HORIZONTAL CENTERING */
     body {
       margin: 0;
-      padding: 12px 10px;
+      padding: 16px 12px;
       background-color: var(--bg-cream);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text-main);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
+      justify-content: center; /* Centers vertically */
+      align-items: center;     /* Centers horizontally */
+      min-height: 100vh;       /* Spans full phone height */
     }
 
     .container {
       width: 100%;
-      max-width: 400px;
-      margin: 0 auto;
+      max-width: 390px;
+      margin: auto 0;          /* Helps keep perfectly centered on short/long screens */
+    }
+
+    /* ALL-IN-ONE OUTER TICKET FRAMEWORK */
+    .outer-ticket-box {
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 16px 14px;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.12);
     }
 
     /* TOP BRAND HEADER */
@@ -76,18 +87,17 @@
     .ticket-card {
       position: relative;
       background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.1);
-      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      border: 1.5px solid #cbd5e1;
       overflow: hidden;
-      margin-bottom: 12px;
+      margin: 10px 0;
     }
 
     /* TOP LIVE AVAILABILITY RIBBON */
     .status-ribbon {
       background-color: #fef2f2;
       border-bottom: 1px solid #fee2e2;
-      padding: 6px 14px;
+      padding: 6px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -122,7 +132,7 @@
 
     /* MAIN COUPON OFFER BODY */
     .ticket-body {
-      padding: 14px 16px;
+      padding: 12px 14px;
       text-align: center;
     }
 
@@ -130,23 +140,23 @@
       display: inline-block;
       background-color: var(--brand-yellow);
       color: #854d0e;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       padding: 2px 8px;
       border-radius: 4px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .offer-title {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 900;
       color: var(--brand-red);
-      margin: 0 0 4px 0;
+      margin: 0 0 2px 0;
       line-height: 1.2;
     }
 
     .offer-subtitle {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-muted);
       margin: 0;
       font-weight: 600;
@@ -155,7 +165,7 @@
     /* TICKET NOTCH & DASHED TEAR LINE */
     .ticket-divider {
       position: relative;
-      height: 16px;
+      height: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -169,26 +179,26 @@
 
     .notch-left, .notch-right {
       position: absolute;
-      width: 16px;
-      height: 16px;
-      background-color: var(--bg-cream);
+      width: 14px;
+      height: 14px;
+      background-color: #ffffff;
       border-radius: 50%;
       top: 0;
     }
 
     .notch-left {
-      left: -10px;
-      border-right: 1.5px solid #e2e8f0;
+      left: -8px;
+      border-right: 1.5px solid #cbd5e1;
     }
 
     .notch-right {
-      right: -10px;
-      border-left: 1.5px solid #e2e8f0;
+      right: -8px;
+      border-left: 1.5px solid #cbd5e1;
     }
 
     /* SPECIFIC REQUIREMENTS & OPTIONS SECTION */
     .ticket-details {
-      padding: 12px 14px 14px 14px;
+      padding: 10px 12px 12px 12px;
       background-color: #fafafa;
     }
 
@@ -199,24 +209,24 @@
       color: #c2410c;
       font-size: 11px;
       font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 8px;
+      padding: 6px 8px;
+      border-radius: 6px;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .options-grid {
       display: flex;
-      gap: 8px;
-      margin-bottom: 10px;
+      gap: 6px;
+      margin-bottom: 8px;
     }
 
     .option-card {
       flex: 1;
       background: #ffffff;
       border: 1.5px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 8px;
+      border-radius: 8px;
+      padding: 6px;
       text-align: center;
     }
 
@@ -226,14 +236,14 @@
     }
 
     .option-icon {
-      font-size: 20px;
+      font-size: 18px;
       display: block;
       margin-bottom: 2px;
     }
 
     .option-info h4 {
       margin: 0 0 2px 0;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       color: var(--text-main);
     }
@@ -242,35 +252,36 @@
       margin: 0;
       font-size: 10px;
       color: var(--text-muted);
-      line-weight: 1.2;
+      line-height: 1.2;
     }
 
     /* CASHIER INSTRUCTION BANNER */
     .cashier-notice {
       background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-dark) 100%);
       color: #ffffff;
-      padding: 10px;
-      border-radius: 10px;
+      padding: 8px;
+      border-radius: 8px;
       text-align: center;
     }
 
     .cashier-notice p {
       margin: 0;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.2;
     }
 
     /* FOOTER INFORMATION */
     footer {
       text-align: center;
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.3;
+      margin-top: 8px;
     }
 
     footer p {
-      margin: 2px 0;
+      margin: 1px 0;
     }
   </style>
 </head>
@@ -278,83 +289,89 @@
 
   <div class="container">
     
-    <!-- BRAND HEADER -->
-    <header class="brand-header">
-      <span class="brand-badge">STUDENT VOUCHER</span>
-      <h1 class="brand-title">MYMY CHICKEN 🍗</h1>
-      <p class="brand-slogan">When chicken calls, make it MYMY!</p>
-    </header>
+    <!-- SINGLE OUTER TICKET RECTANGLE -->
+    <div class="outer-ticket-box">
 
-    <!-- TICKET / COUPON CARD -->
-    <main class="ticket-card">
-      
-      <!-- STATUS RIBBON -->
-      <div class="status-ribbon">
-        <div style="display: flex; align-items: center;">
-          <span class="live-dot"></span>
-          <span class="status-text">AVAILABLE NOW</span>
-        </div>
-        <span class="expiry-tag">LIMITED TIME</span>
-      </div>
+      <!-- BRAND HEADER -->
+      <header class="brand-header">
+        <span class="brand-badge">STUDENT VOUCHER</span>
+        <h1 class="brand-title">MYMY Chicken 🍗</h1>
+        <p class="brand-slogan">When chicken calls, make it MYMY!</p>
+      </header>
 
-      <!-- MAIN OFFER -->
-      <section class="ticket-body">
-        <span class="offer-value">✨ 4,500 KRW VALUE REWARD</span>
-        <h2 class="offer-title">FREE Tteokbokki or Drink! 😋🥤</h2>
-        <p class="offer-subtitle">Exclusive Student Perk • Show screen at counter</p>
-      </section>
-
-      <!-- TICKET DASHED TEAR LINE -->
-      <div class="ticket-divider" aria-hidden="true">
-        <div class="notch-left"></div>
-        <div class="tear-line"></div>
-        <div class="notch-right"></div>
-      </div>
-
-      <!-- CONDITIONS & DETAILS -->
-      <section class="ticket-details">
+      <!-- INNER VOUCHER TICKET -->
+      <main class="ticket-card">
         
-        <!-- GENERAL CONDITION -->
-        <div class="req-banner">
-          ⚠️ <strong>Condition:</strong> Order at least 1 main whole chicken dish
+        <!-- STATUS RIBBON -->
+        <div class="status-ribbon">
+          <div style="display: flex; align-items: center;">
+            <span class="live-dot"></span>
+            <span class="status-text">AVAILABLE NOW</span>
+          </div>
+          <span class="expiry-tag">LIMITED TIME</span>
         </div>
 
-        <!-- SIDE-BY-SIDE OPTIONS -->
-        <div class="options-grid">
-          <!-- Option 1: Dine-In -->
-          <div class="option-card active-option">
-            <span class="option-icon">🥘</span>
-            <div class="option-info">
-              <h4>Dine-In</h4>
-              <p>Free Broth Tteokbokki (4,500 KRW Value)</p>
-              <p style="color: var(--brand-red); font-size: 9px; font-weight: 700; margin-top: 2px;">• 1 per table</p>
+        <!-- MAIN OFFER -->
+        <section class="ticket-body">
+          <span class="offer-value">✨ 4,500 KRW VALUE REWARD</span>
+          <h2 class="offer-title">FREE Tteokbokki or Drink! 😋🥤</h2>
+          <p class="offer-subtitle">Exclusive Student Perk • Show screen at counter</p>
+        </section>
+
+        <!-- TICKET DASHED TEAR LINE -->
+        <div class="ticket-divider" aria-hidden="true">
+          <div class="notch-left"></div>
+          <div class="tear-line"></div>
+          <div class="notch-right"></div>
+        </div>
+
+        <!-- CONDITIONS & DETAILS -->
+        <section class="ticket-details">
+          
+          <!-- GENERAL CONDITION -->
+          <div class="req-banner">
+            ⚠️ Order at least 1 main whole chicken dish
+          </div>
+
+          <!-- SIDE-BY-SIDE OPTIONS -->
+          <div class="options-grid">
+            <!-- Option 1: Dine-In -->
+            <div class="option-card active-option">
+              <span class="option-icon">🥘</span>
+              <div class="option-info">
+                <h4>Dine-In</h4>
+                <p>Free Broth Tteokbokki</p>
+                <p style="color: var(--brand-red); font-size: 9px; font-weight: 700; margin-top: 2px;">• 1 per table</p>
+              </div>
+            </div>
+
+            <!-- Option 2: Takeout -->
+            <div class="option-card">
+              <span class="option-icon">🥤</span>
+              <div class="option-info">
+                <h4>Takeout</h4>
+                <p>Free Large Drink</p>
+                <p style="color: var(--brand-red); font-size: 9px; font-weight: 700; margin-top: 2px;">• 1 per order</p>
+              </div>
             </div>
           </div>
 
-          <!-- Option 2: Takeout -->
-          <div class="option-card">
-            <span class="option-icon">🥤</span>
-            <div class="option-info">
-              <h4>Takeout</h4>
-              <p>Free Large Drink</p>
-              <p style="color: var(--brand-red); font-size: 9px; font-weight: 700; margin-top: 2px;">• 1 per order</p>
-            </div>
+          <!-- CASHIER SHOW SCREEN NOTICE -->
+          <div class="cashier-notice">
+            <p>📱 Show this screen to cashier when placing your order!</p>
           </div>
-        </div>
 
-        <!-- CASHIER SHOW SCREEN NOTICE -->
-        <div class="cashier-notice">
-          <p>📱 Show this screen to cashier when placing your order!</p>
-        </div>
-      </section>
+        </section>
 
-    </main>
+      </main>
 
-    <!-- FOOTER INFO -->
-    <footer>
-      <p>⏰ <strong>Hours:</strong> Mon–Sun: 4:00 PM – 01:30 AM</p>
-      <p>Valid for university students.</p>
-    </footer>
+      <!-- FOOTER INFO -->
+      <footer>
+        <p>⏰ <strong>Hours:</strong> Mon–Sun: 4:00 PM – 01:30 AM</p>
+        <p>Valid for university students</p>
+      </footer>
+
+    </div>
 
   </div>
 
