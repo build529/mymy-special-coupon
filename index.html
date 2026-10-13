@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My My Chicken - Exclusive Student Coupon</title>
+  <style>
+    :root {
+      --bg-cream: #fbf7f0;
+      --brand-purple: #6366f1;
+      --brand-purple-dark: #4f46e5;
+      --brand-red: #dc2626;
+      --brand-yellow: #fef08a;
+      --card-bg: #ffffff;
+      --text-main: #1e1b4b;
+      --text-muted: #64748b;
+      --border-dash: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px 12px;
+      background-color: var(--bg-cream);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* TOP BRAND HEADER */
+    .brand-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-dark) 100%);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+      margin-bottom: 8px;
+    }
+
+    .brand-title {
+      font-size: 26px;
+      font-weight: 900;
+      margin: 0 0 4px 0;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-slogan {
+      font-size: 13px;
+      color: var(--brand-purple);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* TICKET VOUCHER CARD CONTAINER */
+    .ticket-card {
+      position: relative;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.12);
+      border: 2px solid #e2e8f0;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    /* TOP LIVE AVAILABILITY RIBBON */
+    .status-ribbon {
+      background-color: #fef2f2;
+      border-bottom: 1px solid #fee2e2;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+      margin-right: 6px;
+    }
+
+    .status-text {
+      font-size: 12px;
+      font-weight: 800;
+      color: #166534;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .expiry-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--brand-red);
+      background: #ffffff;
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid #fca5a5;
+    }
+
+    /* MAIN COUPON OFFER BODY */
+    .ticket-body {
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .offer-value {
+      display: inline-block;
+      background-color: var(--brand-yellow);
+      color: #854d0e;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .offer-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--brand-red);
+      margin: 0 0 8px 0;
+      line-height: 1.2;
+    }
+
+    .offer-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 20px 0;
+      font-weight: 600;
+    }
+
+    /* TICKET NOTCH & DASHED TEAR LINE */
+    .ticket-divider {
+      position: relative;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 -2px;
+    }
+
+    .tear-line {
+      width: 100%;
+      border-top: 2px dashed var(--border-dash);
+    }
+
+    .notch-left, .notch-right {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--bg-cream);
+      border-radius: 50%;
+      top: 0;
+    }
+
+    .notch-left {
+      left: -12px;
+      border-right: 2px solid #e2e8f0;
+    }
+
+    .notch-right {
+      right: -12px;
+      border-left: 2px solid #e2e8f0;
+    }
+
+    /* SPECIFIC REQUIREMENTS & OPTIONS SECTION */
+    .ticket-details {
+      padding: 20px;
+      background-color: #fafafa;
+    }
+
+    .details-heading {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin: 0 0 12px 0;
+      text-align: center;
+    }
+
+    .option-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .option-card.active-option {
+      border-color: var(--brand-purple);
+      background-color: #f5f3ff;
+    }
+
+    .option-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .option-info h4 {
+      margin: 0 0 2px 0;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .option-info p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    /* CASHIER INSTRUCTION BANNER */
+    .cashier-notice {
+      background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-dark) 100%);
+      color: #ffffff;
+      padding: 16px;
+      border-radius: 14px;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .cashier-notice p {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* FOOTER INFORMATION */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- BRAND HEADER -->
+    <header class="brand-header">
+      <span class="brand-badge">STUDENT VOUCHER</span>
+      <h1 class="brand-title">MYMY CHICKEN🍗</h1>
+      <p class="brand-slogan">When chicken calls, make it MYMY!</p>
+    </header>
+
+    <!-- TICKET / COUPON CARD -->
+    <main class="ticket-card">
+      
+      <!-- STATUS RIBBON -->
+      <div class="status-ribbon">
+        <div style="display: flex; align-items: center;">
+          <span class="live-dot"></span>
+          <span class="status-text">AVAILABLE NOW</span>
+        </div>
+        <span class="expiry-tag">LIMITED TIME</span>
+      </div>
+
+      <!-- MAIN OFFER -->
+      <section class="ticket-body">
+        <span class="offer-value">✨ 4,500 KRW VALUE REWARD</span>
+        <h2 class="offer-title">FREE Broth Tteokbokki or Drink! 😋🥤</h2>
+        <p class="offer-subtitle">Exclusive Student Perk • Show screen at counter</p>
+      </section>
+
+      <!-- TICKET DASHED TEAR LINE -->
+      <div class="ticket-divider" aria-hidden="true">
+        <div class="notch-left"></div>
+        <div class="tear-line"></div>
+        <div class="notch-right"></div>
+      </div>
+
+        <!-- SPECIFIC REQUIREMENTS & OPTIONS SECTION -->
+        <section class="ticket-details">
+        <h3 class="details-heading">Select Your Claim Option</h3>
+
+        <!-- Option 1: Dine-In -->
+        <div class="option-card active-option">
+            <span class="option-icon">🥘</span>
+            <div class="option-info">
+            <h4>Dine-in: Free Broth Tteokbokki (4,500 KRW Value)</h4>
+            <p>⚠️ <strong>Condition:</strong> 1 free dish per table when ordering at least 1 main whole chicken dish.</p>
+            </div>
+        </div>
+
+        <!-- Option 2: Takeout -->
+        <div class="option-card">
+            <span class="option-icon">🥤</span>
+            <div class="option-info">
+            <h4>Takeout: Free Large Drink</h4>
+            <p>⚠️ <strong>Condition:</strong> 1 free large drink per order when ordering at least 1 main whole chicken dish.</p>
+            </div>
+        </div>
+
+        <!-- CASHIER SHOW SCREEN NOTICE -->
+        <div class="cashier-notice">
+            <p>📱 <strong>How to Redeem:</strong><br>Show this active screen at the counter when placing your order!</p>
+        </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER INFO -->
+    <footer>
+      <p>⏰ <strong>Hours:</strong> Mon–Sun: 4:00 PM – 01:30 AM</p>
+      <p>⚠️ 1 coupon per table. Valid for university students.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
